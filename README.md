@@ -4,6 +4,7 @@
 - `Makefile` is used to compile the CUDA code.
 - `README.md` provides an overview and instructions for the project.
 - `runLogs.txt` contains logs from running the batch image processor.
+- `learningLogs.txt` contains logs from learning and debugging the CUDA code.
 - You can run the project using the command:
 ```
 make clean && make sample && make && make run
