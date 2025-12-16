@@ -1,0 +1,66 @@
+myPC:~/Project$ ./run.sh
+rm -rf bin/*
+rm -rf output/*
+Cleaned build and output directories
+Creating sample PGM images...
+Creating sample PGM images...
+  Created: data/gradient.pgm (512x512)
+  Created: data/checkerboard.pgm (512x512)
+  Created: data/circles.pgm (512x512)
+  Created: data/noise.pgm (512x512)
+  Created: data/stripes.pgm (512x512)
+  Created: data/gradient_large.pgm (1024x768)
+  Created: data/checkerboard_small.pgm (256x256)
+  Created: data/circles_medium.pgm (640x480)
+
+Successfully created 8 sample images in the data/ directory
+nvcc -std=c++11 -O3 -I/usr/local/cuda/include batchImageProcessor.cu -o bin/batchImageProcessor -L/usr/local/cuda/lib64 -lcudart -lnppif -lnppig -lnppidei -lnppim -lnppisu -lnppc -lnpps
+Build complete: bin/batchImageProcessor
+Running batch image processor...
+bin/batchImageProcessor data output
+Using GPU: NVIDIA GeForce GTX 1050 Ti
+
+Processing:data/stripes.pgm
+  Created: output/stripes_boxfilter.pgm
+  Created: output/stripes_gaussian.pgm
+  Created: output/stripes_sobel.pgm
+
+Processing:data/checkerboard.pgm
+  Created: output/checkerboard_boxfilter.pgm
+  Created: output/checkerboard_gaussian.pgm
+  Created: output/checkerboard_sobel.pgm
+
+Processing:data/noise.pgm
+  Created: output/noise_boxfilter.pgm
+  Created: output/noise_gaussian.pgm
+  Created: output/noise_sobel.pgm
+
+Processing:data/gradient.pgm
+  Created: output/gradient_boxfilter.pgm
+  Created: output/gradient_gaussian.pgm
+  Created: output/gradient_sobel.pgm
+
+Processing:data/circles.pgm
+  Created: output/circles_boxfilter.pgm
+  Created: output/circles_gaussian.pgm
+  Created: output/circles_sobel.pgm
+
+Processing:data/checkerboard_small.pgm
+  Created: output/checkerboard_small_boxfilter.pgm
+  Created: output/checkerboard_small_gaussian.pgm
+  Created: output/checkerboard_small_sobel.pgm
+
+Processing:data/circles_medium.pgm
+  Created: output/circles_medium_boxfilter.pgm
+  Created: output/circles_medium_gaussian.pgm
+  Created: output/circles_medium_sobel.pgm
+
+Processing:data/gradient_large.pgm
+  Created: output/gradient_large_boxfilter.pgm
+  Created: output/gradient_large_gaussian.pgm
+  Created: output/gradient_large_sobel.pgm
+
+=== Processing Complete ===
+Processed 8 images
+Generated 24 output images
+myPC:~/Project$ 
